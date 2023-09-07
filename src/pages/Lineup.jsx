@@ -1,25 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "../lib/supabase";
+import PlayerAvatar from "../component/PlayerAvatar";
 
 function Lineup({ clubName, name }) {
   const [loading, setLoading] = useState(true);
   const [roster, setRoster] = useState();
 
-  useEffect(() => {
-    async function getClubRoster() {
-      setLoading(true);
-      let { data: clubRoster, error } = await supabase
-        .from("clubs")
-        .select(`*`)
-        .eq("name", clubName);
-      setRoster(clubRoster);
-    }
-    getClubRoster();
-    setLoading(false);
-  }, []);
-
   const rosterArray = [];
-
   const lineupOrder = [
     "gk",
     "rb",
@@ -47,39 +34,37 @@ function Lineup({ clubName, name }) {
     "lf",
   ];
 
-  roster &&
-    lineupOrder.forEach((position) => {
-      rosterArray.push(roster[0][position]);
-    });
+  async function getClubRoster() {
+    setLoading(true);
+    let { data: clubRoster, error } = await supabase
+      .from("clubs")
+      .select("*")
+      .eq("name", clubName);
+    setRoster(clubRoster);
+    setLoading(false);
+  }
 
-  //console.log(rosterArray);
+  useEffect(() => {
+    getClubRoster();
+
+    roster &&
+      lineupOrder.forEach((position) => {
+        rosterArray.push(roster[0][position]);
+      });
+  }, []);
+
+  console.log("roster", roster);
 
   if (loading) return <></>;
 
   return (
-    <div className="avatar flex-row">
-      {rosterArray.map((playerid) => (
-        <div className="avatar flex-col">
-          <div className="w-10 rounded-full">
-            <img
-              alt="avatar"
-              src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
-            />
-          </div>
-          <p>{playerid}</p>
-        </div>
-      ))}
+    <div className="avatar flex-row flex-wrap">
+      {lineupOrder.map(
+        (position) =>
+          roster[0][position] && <PlayerAvatar playerid={roster[0][position]} />
+      )}
     </div>
   );
-  // <div className="avatar flex-col">
-  //   <div className="w-24 rounded-full">
-  //     <img
-  //       alt="avatar"
-  //       src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
-  //     />
-  //   </div>
-  //   <p>{clubName}</p>
-  // </div>
 }
 
 export default Lineup;
