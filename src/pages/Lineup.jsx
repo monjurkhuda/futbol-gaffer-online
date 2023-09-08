@@ -55,7 +55,7 @@ function Lineup({ clubName, name }) {
 
   console.log("roster", roster);
 
-  if (loading) return <></>;
+  if (loading) return <span className="loading loading-ring loading-lg"></span>;
 
   return (
     <div className="avatar flex-row flex-wrap">
