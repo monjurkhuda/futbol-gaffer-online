@@ -8,7 +8,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Lineup clubName={"Manchester UFC"} name={"jugnu"} />
+        <Lineup
+          homeClubName={"Manchester UFC"}
+          awayClubName={"Manchester City"}
+          name={"jugnu"}
+        />
         {/* <Lineup clubName={"Manchester City"} name={"jugnu"} /> */}
       </header>
     </div>
