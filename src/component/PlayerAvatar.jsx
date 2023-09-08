@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 
-function PlayerAvatar({ playerid }) {
+function PlayerAvatar({ playerid, position }) {
   const [loading, setLoading] = useState(true);
   const [player, setPlayer] = useState();
 
@@ -29,11 +29,12 @@ function PlayerAvatar({ playerid }) {
         <div className="w-6 rounded-full">
           <img
             alt="avatar"
-            src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
+            src="https://www.dsmpartnership.com/downtowndsmusa/filesimages/BLOGS/2021%20Headshots/AuthorProfileImage-01.jpg"
           />
         </div>
       </div>
-      <p class="text-xs">{player && player[0]?.Name}</p>
+      {/* <p class="text-xs">{player && player[0]?.Name}</p> */}
+      <p class="text-xs">{position}</p>
     </div>
   );
 }

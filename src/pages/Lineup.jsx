@@ -9,29 +9,29 @@ function Lineup({ clubName, name }) {
   const rosterArray = [];
   const lineupOrder = [
     "gk",
-    "rb",
-    "rcb",
-    "cb",
-    "lcb",
     "lb",
-    "rwb",
-    "rdm",
-    "cdm",
-    "ldm",
+    "lcb",
+    "cb",
+    "rcb",
+    "rb",
     "lwb",
-    "rm",
-    "rcm",
-    "cm",
-    "lcm",
+    "ldm",
+    "cdm",
+    "rdm",
+    "rwb",
     "lm",
-    "rw",
-    "ram",
-    "cam",
-    "lam",
+    "lcm",
+    "cm",
+    "rcm",
+    "rm",
     "lw",
-    "rf",
-    "cf",
+    "lam",
+    "cam",
+    "ram",
+    "rw",
     "lf",
+    "cf",
+    "rf",
   ];
 
   async function getClubRoster() {
@@ -58,11 +58,90 @@ function Lineup({ clubName, name }) {
   if (loading) return <span className="loading loading-ring loading-lg"></span>;
 
   return (
-    <div className="avatar flex-row flex-wrap">
-      {lineupOrder.map(
-        (position) =>
-          roster[0][position] && <PlayerAvatar playerid={roster[0][position]} />
-      )}
+    <div className="flex-col justify-center align-center">
+      <div className="flex flex-row">
+        {lineupOrder
+          .slice(21, 24)
+          .map(
+            (position) =>
+              roster[0][position] && (
+                <PlayerAvatar
+                  playerid={roster[0][position]}
+                  position={position}
+                />
+              )
+          )}
+      </div>
+
+      <div className="flex flex-row">
+        {lineupOrder
+          .slice(16, 21)
+          .map(
+            (position) =>
+              roster[0][position] && (
+                <PlayerAvatar
+                  playerid={roster[0][position]}
+                  position={position}
+                />
+              )
+          )}
+      </div>
+
+      <div className="flex flex-row">
+        {lineupOrder
+          .slice(11, 16)
+          .map(
+            (position) =>
+              roster[0][position] && (
+                <PlayerAvatar
+                  playerid={roster[0][position]}
+                  position={position}
+                />
+              )
+          )}
+      </div>
+
+      <div className="flex flex-row">
+        {lineupOrder
+          .slice(6, 11)
+          .map(
+            (position) =>
+              roster[0][position] && (
+                <PlayerAvatar
+                  playerid={roster[0][position]}
+                  position={position}
+                />
+              )
+          )}
+      </div>
+
+      <div className="flex flex-row">
+        {lineupOrder
+          .slice(1, 6)
+          .map(
+            (position) =>
+              roster[0][position] && (
+                <PlayerAvatar
+                  playerid={roster[0][position]}
+                  position={position}
+                />
+              )
+          )}
+      </div>
+
+      <div className="flex flex-row">
+        {lineupOrder
+          .slice(0, 1)
+          .map(
+            (position) =>
+              roster[0][position] && (
+                <PlayerAvatar
+                  playerid={roster[0][position]}
+                  position={position}
+                />
+              )
+          )}
+      </div>
     </div>
   );
 }
