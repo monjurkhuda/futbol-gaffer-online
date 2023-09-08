@@ -33,7 +33,7 @@ function PlayerAvatar({ playerid }) {
           />
         </div>
       </div>
-      <p class="text-base">{player && player[0]?.Name}</p>
+      <p class="text-xs">{player && player[0]?.Name}</p>
     </div>
   );
 }
