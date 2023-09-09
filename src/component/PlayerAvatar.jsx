@@ -29,8 +29,8 @@ function PlayerAvatar({ playerid, position, imgSrc }) {
           <img alt="avatar" src={imgSrc} />
         </div>
       </div>
-      {/* <p class="text-xs">{player && player[0]?.Name}</p> */}
-      <p class="text-xs">{position}</p>
+      <p class="text-xs">{player && player[0]?.Name}</p>
+      {/* <p class="text-xs">{position}</p> */}
     </div>
   );
 }
