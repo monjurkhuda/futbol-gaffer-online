@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
+import { GiSoccerBall } from "react-icons/gi";
+import blueJersey from "../images/soccer-jersey.png";
+import redJersey from "../images/red-soccer-jersey.png";
 
-function PlayerAvatar({ playerid, position, imgSrc }) {
+function PlayerAvatar({ playerid, color, position, imgSrc }) {
   const [loading, setLoading] = useState(true);
   const [player, setPlayer] = useState();
 
@@ -25,8 +28,9 @@ function PlayerAvatar({ playerid, position, imgSrc }) {
   return (
     <div className="flex-col p-2">
       <div className="avatar">
-        <div className="w-6 rounded-full">
-          <img alt="avatar" src={imgSrc} />
+        <div className="w-6">
+          {color == "blue" ? <img src={blueJersey} alt="Logo" /> : <></>}
+          {color == "red" ? <img src={redJersey} alt="Logo" /> : <></>}
         </div>
       </div>
       <p class="text-xs">{player && player[0]?.Name}</p>

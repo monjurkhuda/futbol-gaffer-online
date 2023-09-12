@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "../lib/supabase";
 import PlayerAvatar from "../component/PlayerAvatar";
+import { GiSoccerBall } from "react-icons/gi";
 
 function Lineup({ homeClubName, awayClubName, name }) {
   const [loading, setLoading] = useState(true);
@@ -133,6 +134,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
 
   return (
     <div className="flex-col justify-center align-center w-full">
+      <GiSoccerBall />
       <div className="flex flex-row justify-evenly">
         {awayLineupOrder
           .slice(23, 24)
@@ -142,6 +144,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
                 <PlayerAvatar
                   playerid={awayRoster[0][position]}
                   position={position}
+                  color={"blue"}
                   imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
                 />
               )
@@ -157,6 +160,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
                 <PlayerAvatar
                   playerid={awayRoster[0][position]}
                   position={position}
+                  color={"blue"}
                   imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
                 />
               )
@@ -172,6 +176,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
                 <PlayerAvatar
                   playerid={homeRoster[0][position]}
                   position={position}
+                  color={"red"}
                   imgSrc="https://www.dsmpartnership.com/downtowndsmusa/filesimages/BLOGS/2021%20Headshots/AuthorProfileImage-01.jpg"
                 />
               )
@@ -187,6 +192,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
                 <PlayerAvatar
                   playerid={homeRoster[0][position]}
                   position={position}
+                  color={"red"}
                   imgSrc="https://www.dsmpartnership.com/downtowndsmusa/filesimages/BLOGS/2021%20Headshots/AuthorProfileImage-01.jpg"
                 />
               )
@@ -202,6 +208,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
                 <PlayerAvatar
                   playerid={awayRoster[0][position]}
                   position={position}
+                  color={"blue"}
                   imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
                 />
               )
@@ -217,6 +224,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
                 <PlayerAvatar
                   playerid={awayRoster[0][position]}
                   position={position}
+                  color={"blue"}
                   imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
                 />
               )
@@ -232,6 +240,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
                 <PlayerAvatar
                   playerid={homeRoster[0][position]}
                   position={position}
+                  color={"red"}
                   imgSrc="https://www.dsmpartnership.com/downtowndsmusa/filesimages/BLOGS/2021%20Headshots/AuthorProfileImage-01.jpg"
                 />
               )
@@ -247,6 +256,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
                 <PlayerAvatar
                   playerid={homeRoster[0][position]}
                   position={position}
+                  color={"red"}
                   imgSrc="https://www.dsmpartnership.com/downtowndsmusa/filesimages/BLOGS/2021%20Headshots/AuthorProfileImage-01.jpg"
                 />
               )
@@ -262,6 +272,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
                 <PlayerAvatar
                   playerid={awayRoster[0][position]}
                   position={position}
+                  color={"blue"}
                   imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
                 />
               )
@@ -277,6 +288,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
                 <PlayerAvatar
                   playerid={awayRoster[0][position]}
                   position={position}
+                  color={"blue"}
                   imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
                 />
               )
@@ -292,6 +304,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
                 <PlayerAvatar
                   playerid={homeRoster[0][position]}
                   position={position}
+                  color={"red"}
                   imgSrc="https://www.dsmpartnership.com/downtowndsmusa/filesimages/BLOGS/2021%20Headshots/AuthorProfileImage-01.jpg"
                 />
               )
@@ -307,6 +320,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
                 <PlayerAvatar
                   playerid={homeRoster[0][position]}
                   position={position}
+                  color={"red"}
                   imgSrc="https://www.dsmpartnership.com/downtowndsmusa/filesimages/BLOGS/2021%20Headshots/AuthorProfileImage-01.jpg"
                 />
               )
