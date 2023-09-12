@@ -7,6 +7,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
   const [loading, setLoading] = useState(true);
   const [homeRoster, setHomeRoster] = useState();
   const [awayRoster, setAwayRoster] = useState();
+  const [lineupScreen, setLineupScreen] = useState("roster");
 
   const homeRosterArray = [];
   const homeLineupOrder = [
@@ -112,7 +113,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
     setLoading(false);
   }
 
-  console.log(awayRoster);
+  console.log(lineupScreen);
 
   useEffect(() => {
     getClubRosters();
@@ -128,18 +129,29 @@ function Lineup({ homeClubName, awayClubName, name }) {
       });
   }, []);
 
-  console.log("awayRosterArray", awayRosterArray);
-
   if (loading) return <span className="loading loading-ring loading-lg"></span>;
 
   return (
     <div className="flex-col justify-center align-center w-full ">
-      <div className="flex flex-row justify-center align-center gap-2">
-        <p>ROSTER</p>
-        <div>
-          <input type="checkbox" className="toggle toggle-lg" />
-        </div>
-        <p>NEXT MATCH</p>
+      <div className="flex flex-row justify-center align-center">
+        <button
+          className={`rounded-tr-none rounded-br-none btn ${
+            lineupScreen == "roster" ? "btn-active btn-accent" : "btn-outline"
+          }`}
+          onClick={() => setLineupScreen("roster")}
+        >
+          ROSTER
+        </button>
+        <button
+          className={`rounded-tl-none rounded-bl-none btn ${
+            lineupScreen == "nextmatch"
+              ? "btn-active btn-accent"
+              : "btn-outline"
+          }`}
+          onClick={() => setLineupScreen("nextmatch")}
+        >
+          NEXT MATCH
+        </button>
       </div>
       <GiSoccerBall />
       <div className="bg-green-800 m-4 border-2 border-solid border-white">
