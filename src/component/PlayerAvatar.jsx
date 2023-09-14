@@ -26,14 +26,14 @@ function PlayerAvatar({ playerid, color, position, imgSrc }) {
   if (loading) return <span className="loading loading-ring loading-lg"></span>;
 
   return (
-    <div className="flex-col p-2">
-      <div className="avatar">
-        <div className="w-6">
-          {color == "blue" ? <img src={blueJersey} alt="Logo" /> : <></>}
-          {color == "red" ? <img src={redJersey} alt="Logo" /> : <></>}
-        </div>
+    <div className="flex flex-col justify-center items-center w-20">
+      <div className="w-6">
+        {color == "blue" ? <img src={blueJersey} alt="Logo" /> : <></>}
+        {color == "red" ? <img src={redJersey} alt="Logo" /> : <></>}
       </div>
-      <p class="text-xs">{player && player[0]?.Name}</p>
+      <div>
+        <p class="text-xs">{player && player[0]?.Name}</p>
+      </div>
       {/* <p class="text-xs">{position}</p> */}
     </div>
   );

@@ -255,8 +255,8 @@ function Lineup({ homeClubName, awayClubName, name }) {
     );
   } else {
     return (
-      <div className="flex-col justify-center align-center w-full ">
-        <div className="flex flex-row justify-center align-center">
+      <div className="flex flex-col w-full">
+        <div className="flex flex-row justify-center items-center mb-5">
           <button
             className={`rounded-tr-none rounded-br-none btn ${
               lineupScreen == "roster" ? "btn-active btn-accent" : "btn-outline"
@@ -276,43 +276,11 @@ function Lineup({ homeClubName, awayClubName, name }) {
             NEXT MATCH
           </button>
         </div>
-        <GiSoccerBall />
-        <div className="bg-green-800 m-4 border-2 border-solid border-white">
-          <div className="flex flex-row justify-evenly">
-            {awayLineupOrder
-              .slice(23, 24)
-              .map(
-                (position) =>
-                  awayRoster[0][position] && (
-                    <PlayerAvatar
-                      playerid={awayRoster[0][position]}
-                      position={position}
-                      color={"blue"}
-                      imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
-                    />
-                  )
-              )}
-          </div>
 
-          <div className="flex flex-row justify-evenly">
-            {awayLineupOrder
-              .slice(18, 23)
-              .map(
-                (position) =>
-                  awayRoster[0][position] && (
-                    <PlayerAvatar
-                      playerid={awayRoster[0][position]}
-                      position={position}
-                      color={"blue"}
-                      imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
-                    />
-                  )
-              )}
-          </div>
-
-          <div className="flex flex-row justify-evenly">
+        <div className="flex flex-row overflow-auto">
+          <div className="flex flex-col justify-center bg-green-600 w-20">
             {homeLineupOrder
-              .slice(21, 24)
+              .slice(0, 1)
               .map(
                 (position) =>
                   homeRoster[0][position] && (
@@ -326,119 +294,7 @@ function Lineup({ homeClubName, awayClubName, name }) {
               )}
           </div>
 
-          <div className="flex flex-row justify-evenly">
-            {homeLineupOrder
-              .slice(16, 21)
-              .map(
-                (position) =>
-                  homeRoster[0][position] && (
-                    <PlayerAvatar
-                      playerid={homeRoster[0][position]}
-                      position={position}
-                      color={"red"}
-                      imgSrc="https://www.dsmpartnership.com/downtowndsmusa/filesimages/BLOGS/2021%20Headshots/AuthorProfileImage-01.jpg"
-                    />
-                  )
-              )}
-          </div>
-
-          <div className="flex flex-row justify-evenly">
-            {awayLineupOrder
-              .slice(13, 18)
-              .map(
-                (position) =>
-                  awayRoster[0][position] && (
-                    <PlayerAvatar
-                      playerid={awayRoster[0][position]}
-                      position={position}
-                      color={"blue"}
-                      imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
-                    />
-                  )
-              )}
-          </div>
-
-          <div className="flex flex-row justify-evenly">
-            {awayLineupOrder
-              .slice(8, 13)
-              .map(
-                (position) =>
-                  awayRoster[0][position] && (
-                    <PlayerAvatar
-                      playerid={awayRoster[0][position]}
-                      position={position}
-                      color={"blue"}
-                      imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
-                    />
-                  )
-              )}
-          </div>
-
-          <div className="flex flex-row justify-evenly">
-            {homeLineupOrder
-              .slice(11, 16)
-              .map(
-                (position) =>
-                  homeRoster[0][position] && (
-                    <PlayerAvatar
-                      playerid={homeRoster[0][position]}
-                      position={position}
-                      color={"red"}
-                      imgSrc="https://www.dsmpartnership.com/downtowndsmusa/filesimages/BLOGS/2021%20Headshots/AuthorProfileImage-01.jpg"
-                    />
-                  )
-              )}
-          </div>
-
-          <div className="flex flex-row justify-evenly">
-            {homeLineupOrder
-              .slice(6, 11)
-              .map(
-                (position) =>
-                  homeRoster[0][position] && (
-                    <PlayerAvatar
-                      playerid={homeRoster[0][position]}
-                      position={position}
-                      color={"red"}
-                      imgSrc="https://www.dsmpartnership.com/downtowndsmusa/filesimages/BLOGS/2021%20Headshots/AuthorProfileImage-01.jpg"
-                    />
-                  )
-              )}
-          </div>
-
-          <div className="flex flex-row justify-evenly">
-            {awayLineupOrder
-              .slice(3, 8)
-              .map(
-                (position) =>
-                  awayRoster[0][position] && (
-                    <PlayerAvatar
-                      playerid={awayRoster[0][position]}
-                      position={position}
-                      color={"blue"}
-                      imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
-                    />
-                  )
-              )}
-          </div>
-
-          <div className="flex flex-row justify-evenly">
-            {awayLineupOrder
-              .slice(0, 3)
-              .map(
-                (position) =>
-                  awayRoster[0][position] && (
-                    <PlayerAvatar
-                      playerid={awayRoster[0][position]}
-                      position={position}
-                      color={"blue"}
-                      imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
-                    />
-                  )
-              )}
-          </div>
-
-          <div className="flex flex-row justify-evenly">
+          <div className="flex flex-col justify-center bg-green-700 w-20">
             {homeLineupOrder
               .slice(1, 6)
               .map(
@@ -454,9 +310,41 @@ function Lineup({ homeClubName, awayClubName, name }) {
               )}
           </div>
 
-          <div className="flex flex-row justify-evenly">
+          <div className="flex flex-col justify-center bg-green-600 w-20">
+            {awayLineupOrder
+              .slice(0, 3)
+              .map(
+                (position) =>
+                  awayRoster[0][position] && (
+                    <PlayerAvatar
+                      playerid={awayRoster[0][position]}
+                      position={position}
+                      color={"blue"}
+                      imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
+                    />
+                  )
+              )}
+          </div>
+
+          <div className="flex flex-col justify-center bg-green-700 w-20">
+            {awayLineupOrder
+              .slice(3, 8)
+              .map(
+                (position) =>
+                  awayRoster[0][position] && (
+                    <PlayerAvatar
+                      playerid={awayRoster[0][position]}
+                      position={position}
+                      color={"blue"}
+                      imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
+                    />
+                  )
+              )}
+          </div>
+
+          <div className="flex flex-col justify-center bg-green-600 w-20">
             {homeLineupOrder
-              .slice(0, 1)
+              .slice(6, 11)
               .map(
                 (position) =>
                   homeRoster[0][position] && (
@@ -465,6 +353,118 @@ function Lineup({ homeClubName, awayClubName, name }) {
                       position={position}
                       color={"red"}
                       imgSrc="https://www.dsmpartnership.com/downtowndsmusa/filesimages/BLOGS/2021%20Headshots/AuthorProfileImage-01.jpg"
+                    />
+                  )
+              )}
+          </div>
+
+          <div className="flex flex-col justify-center bg-green-700 w-20">
+            {homeLineupOrder
+              .slice(11, 16)
+              .map(
+                (position) =>
+                  homeRoster[0][position] && (
+                    <PlayerAvatar
+                      playerid={homeRoster[0][position]}
+                      position={position}
+                      color={"red"}
+                      imgSrc="https://www.dsmpartnership.com/downtowndsmusa/filesimages/BLOGS/2021%20Headshots/AuthorProfileImage-01.jpg"
+                    />
+                  )
+              )}
+          </div>
+
+          <div className="flex flex-col justify-center bg-green-600 w-20">
+            {awayLineupOrder
+              .slice(8, 13)
+              .map(
+                (position) =>
+                  awayRoster[0][position] && (
+                    <PlayerAvatar
+                      playerid={awayRoster[0][position]}
+                      position={position}
+                      color={"blue"}
+                      imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
+                    />
+                  )
+              )}
+          </div>
+
+          <div className="flex flex-col justify-center bg-green-700 w-20">
+            {awayLineupOrder
+              .slice(13, 18)
+              .map(
+                (position) =>
+                  awayRoster[0][position] && (
+                    <PlayerAvatar
+                      playerid={awayRoster[0][position]}
+                      position={position}
+                      color={"blue"}
+                      imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
+                    />
+                  )
+              )}
+          </div>
+
+          <div className="flex flex-col justify-center bg-green-600 w-20">
+            {homeLineupOrder
+              .slice(16, 21)
+              .map(
+                (position) =>
+                  homeRoster[0][position] && (
+                    <PlayerAvatar
+                      playerid={homeRoster[0][position]}
+                      position={position}
+                      color={"red"}
+                      imgSrc="https://www.dsmpartnership.com/downtowndsmusa/filesimages/BLOGS/2021%20Headshots/AuthorProfileImage-01.jpg"
+                    />
+                  )
+              )}
+          </div>
+
+          <div className="flex flex-col justify-center bg-green-700 w-20">
+            {homeLineupOrder
+              .slice(21, 24)
+              .map(
+                (position) =>
+                  homeRoster[0][position] && (
+                    <PlayerAvatar
+                      playerid={homeRoster[0][position]}
+                      position={position}
+                      color={"red"}
+                      imgSrc="https://www.dsmpartnership.com/downtowndsmusa/filesimages/BLOGS/2021%20Headshots/AuthorProfileImage-01.jpg"
+                    />
+                  )
+              )}
+          </div>
+
+          <div className="flex flex-col justify-center bg-green-600 w-20">
+            {awayLineupOrder
+              .slice(18, 23)
+              .map(
+                (position) =>
+                  awayRoster[0][position] && (
+                    <PlayerAvatar
+                      playerid={awayRoster[0][position]}
+                      position={position}
+                      color={"blue"}
+                      imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
+                    />
+                  )
+              )}
+          </div>
+
+          <div className="flex flex-col justify-center bg-green-700 w-20">
+            {awayLineupOrder
+              .slice(23, 24)
+              .map(
+                (position) =>
+                  awayRoster[0][position] && (
+                    <PlayerAvatar
+                      playerid={awayRoster[0][position]}
+                      position={position}
+                      color={"blue"}
+                      imgSrc="https://t3.ftcdn.net/jpg/00/64/67/52/360_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
                     />
                   )
               )}
